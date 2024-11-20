@@ -4,8 +4,7 @@ Tinny random number generate running on ESP8266.
 ## Introduction:
 In the spirit of the RP2040 generator, the code has been adapted to run on ESP8266EX.
 
-Just for fun as proof of concept.
-
+*`Just for fun as proof of concept`.*
 ## Concept:
 
 A Micro-python library which provides an interface to generate a random number using the ESP8266's capabilities. 
@@ -32,9 +31,9 @@ For verification purposes, we will only run Ent tests to quantify and assess the
 
 [Ent](https://www.fourmilab.ch) John Walker
 
-- Sample size: 1.94 MB 
+- Sample size: 1.94 MB (in the Ent Folder)
 - Total generated: 100'000 values
-- Ent report - Raw
+- [Ent report - Raw](https://github.com/MicroControleurMonde/ESP8266_RNG/blob/main/Ent/Ent_report.txt)
 
 ### Ent Analysis :
 
