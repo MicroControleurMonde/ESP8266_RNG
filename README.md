@@ -8,7 +8,9 @@ Just for fun as proof of concept.
 
 ## Concept:
 
-A Micro-python library which provides an interface to generate a random number using the ESP8266's capabilities. It enables Wi-Fi temporarily to enhance entropic noise, reads a random value from the ADC, and then disables Wi-Fi.
+A Micro-python library which provides an interface to generate a random number using the ESP8266's capabilities. 
+
+It enables Wi-Fi temporarily to enhance entropic noise, reads a random value from the ADC, and then disables Wi-Fi.
 
 - Library : **esp8266_rng_lib**
 - Libarary test: **Test_Simple_ESP8266_rng_lib.py**
@@ -36,12 +38,12 @@ For verification purposes, we will only run Ent tests to quantify and assess the
 
 ### Ent Analysis :
 
-- **Entropy**: **3.44 bits per byte**, which shows that the data generated is not perfectly random, but relatively close to random.
+- **Entropy**: **3.44 bits per byte**, which shows that the data generated is not perfectly random.
 - **Compression**: The data is 57% compressible, indicating a certain amount of redundancy.
 - **Distribution**: The distribution of values is broadly uniform, but the entropy and Pi calculations show that there are still biases in the data.
 - **Correlation**: The data is almost uncorrelated, which is good for randomness.
 
 ## Conclusion:
-So, overall the generator produces random numbers with good quality, but there are biases, which may be due to the nature of the generator based on ADC and the whitening method.
+So, overall the generator produces random numbers with good quality, but there are biases.
 
 On the downside, the generator is extremely slow ... which is normal for this kind of small MCU.
