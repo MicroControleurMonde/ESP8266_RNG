@@ -1,11 +1,11 @@
-# Importer la bibliothèque et les classes
+# Import library and classes
 import esp8266_rng_lib
 
-# Créer une instance de RandomGenerator
+# Create an instance of RandomGenerator
 rng = esp8266_rng_lib.RandomGenerator()
 
-# Générer un nombre aléatoire
+# Generate a random number
 random_number = rng.generate()
 
-# Afficher le nombre aléatoire généré
+# Display the random number generated
 print(random_number)
