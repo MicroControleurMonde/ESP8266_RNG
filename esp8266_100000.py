@@ -2,61 +2,60 @@ import esp8266_rng_lib
 import utime
 import time
 
-
-# Fonction pour afficher l'heure actuelle
+# Function to display the current time
 def display_current_time():
-    # Obtenir l'heure locale à partir de l'horloge système
-    current_time = time.localtime()  # Récupérer l'heure locale (format struct_time)
+    # Get the local time from the system clock
+    current_time = time.localtime()  # Retrieve local time (struct_time format)
     
-    # Formater manuellement l'heure, les minutes et les secondes
+    # Manually format the hour, minute, and second
     hour = current_time[3]
     minute = current_time[4]
     second = current_time[5]
     
-    # Afficher l'heure au format: HH:MM:SS
+    # Display the time in the format: HH:MM:SS
     formatted_time = "{:02d}:{:02d}:{:02d}".format(hour, minute, second)
-    print("Heure", formatted_time)
+    print("Time", formatted_time)
 
-print("Démarrage du génerateur")
-# Afficher l'heure courante toutes les secondes
+print("Starting the generator")
+# Display the current time every second
 display_current_time()
 
-# Créer une instance de RandomGenerator
+# Create an instance of RandomGenerator
 rng = esp8266_rng_lib.RandomGenerator()
 
-# Nombre de nombres aléatoires à générer
+# Number of random numbers to generate
 num_random_numbers = 100000
-block_size = 10000  # Taille du bloc (10 000 valeurs)
+block_size = 10000  # Block size (10,000 values)
 
-# Ouvrir un fichier pour enregistrer les nombres aléatoires
+# Open a file to save the random numbers
 file_name = 'esp8266_rng.txt'
 with open(file_name, 'w') as f:
-    # Mesurer le temps de début
+    # Measure the start time
     start_time = utime.ticks_ms()
 
-    # Générer les nombres aléatoires et les écrire dans le fichier
+    # Generate random numbers and write them to the file
     for i in range(num_random_numbers):
         random_number = rng.generate()
         f.write(f"{random_number}\n")
 
-        # Afficher un message tous les 10 000 nombres générés
+        # Display a message every 10,000 numbers generated
         if (i + 1) % block_size == 0:
-            print(f"Bloc de {block_size} nombres générés (total {i + 1} sur {num_random_numbers})")
+            print(f"Block of {block_size} numbers generated (total {i + 1} out of {num_random_numbers})")
 
-    # Mesurer le temps de fin
+    # Measure the end time
     end_time = utime.ticks_ms()
 
-# Calculer le temps écoulé en secondes
+# Calculate the elapsed time in seconds
 elapsed_time_ms = utime.ticks_diff(end_time, start_time)
 elapsed_time_s = elapsed_time_ms / 1000.0
 
-# Calculer le débit en octets par seconde
-# Chaque nombre aléatoire généré est un entier de 64 bits (8 octets)
-total_bytes = num_random_numbers * 8  # 8 octets par nombre
+# Calculate the throughput in bytes per second
+# Each random number generated is a 64-bit integer (8 bytes)
+total_bytes = num_random_numbers * 8  # 8 bytes per number
 bytes_per_second = total_bytes / elapsed_time_s
 
-# Afficher les résultats
-print(f"Temps écoulé pour générer {num_random_numbers} nombres aléatoires: {elapsed_time_s:.2f} secondes")
-print(f"Débit de génération des nombres aléatoires: {bytes_per_second:.2f} bytes par seconde")
-print("Arret du génerateur")
+# Display the results
+print(f"Time taken to generate {num_random_numbers} random numbers: {elapsed_time_s:.2f} seconds")
+print(f"Random number generation rate: {bytes_per_second:.2f} bytes per second")
+print("Stopping the generator")
 display_current_time()
