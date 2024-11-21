@@ -2,7 +2,7 @@
 Tinny random number generate running on ESP8266.
 
 ## Introduction:
-In the spirit of the RP2040 generator, the code has been adapted to run on ESP8266EX.
+In the spirit of the RP2040 generator [Link](https://github.com/MicroControleurMonde/RP2040-RNG), the code has been adapted to run on ESP8266EX.
 
 *`Just for fun as proof of concept`.*
 ## Concept:
