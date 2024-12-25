@@ -37,7 +37,7 @@ For verification purposes, we will only run Ent tests to quantify and assess the
 
 ### Ent Analysis :
 
-- **Entropy**: **3.44 bits per byte**, which shows that the data generated is not perfectly random.
+~~- **Entropy**: **3.44 bits per byte**, which shows that the data generated is not perfectly random.~~ **Wrong calculation. To do again!**
 - **Compression**: The data is 57% compressible, indicating a certain amount of redundancy.
 - **Distribution**: The distribution of values is broadly uniform, but the entropy and Pi calculations show that there are still biases in the data.
 - **Correlation**: The data is almost uncorrelated, which is good for randomness.
