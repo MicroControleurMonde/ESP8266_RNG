@@ -1,10 +1,12 @@
 # ESP8266_RNG
-Tinny random number generate running on ESP8266.
+![Link](https://github.com/MicroControleurMonde/ESP32_RNG/blob/main/Reports/ESP32download.jpg)
+
+Tinny random number generator running on ESP8266.
 
 ## Introduction:
 In the spirit of the RP2040 generator [Link](https://github.com/MicroControleurMonde/RP2040-RNG), the code has been adapted to run on ESP8266EX.
 
-***`Just for fun as proof of concept`.***
+***`Just as proof of concept`.***
 ## Concept:
 
 A Micro-python library which provides an interface to generate a random number using the ESP8266's capabilities. 
@@ -33,14 +35,17 @@ For verification purposes, we will only run Ent tests to quantify and assess the
 
 - Sample size: 1.94 MB (in the Ent Folder)
 - Total generated: 100'000 values
-- [Ent report - Raw](https://github.com/MicroControleurMonde/ESP8266_RNG/blob/main/Ent/Ent_report.txt)
+- [Ent report - Raw](https://github.com/MicroControleurMonde/ESP8266_RNG/blob/main/Ent/esp8266_100000_ent.txt)
 
-### Ent Analysis :
+### Ent/DJent Analysis :
 
-~~- **Entropy**: **3.44 bits per byte**, which shows that the data generated is not perfectly random.~~ **Wrong calculation. To do again!**
-- **Compression**: The data is 57% compressible, indicating a certain amount of redundancy.
+- **Entropy**:
+   - Min Entropy (by max occurrence of symbol 1) = 0.978254
+   - Shannon IID Entropy = **0.999834** bits per symbol
+- **Compression**: Optimal compression: it could reduce the file size by only 0.016638 %.
 - **Distribution**: The distribution of values is broadly uniform, but the entropy and Pi calculations show that there are still biases in the data.
-- **Correlation**: The data is almost uncorrelated, which is good for randomness.
+- **Monte Carlo**: The calculated value of Pi is 3.100761, with an error of 1.30%.
+- **Correlation**: The serial correlation is -0.000466, which suggests that the successive symbols in the file are practically uncorrelated, therefore close to random.
 
 ## Conclusion:
 So, overall the generator produces random numbers with good quality, but there are biases.
