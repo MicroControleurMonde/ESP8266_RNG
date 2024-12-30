@@ -1,0 +1,20 @@
+ent -b -c esp8266_100000.bin
+
+Value Char Occurrences Fraction
+  0          3101718   0.492406
+  1          3197386   0.507594
+
+Total:       6299104   1.000000
+
+Entropy = 0.999834 bits per bit.
+
+Optimum compression would reduce the size
+of this 6299104 bit file by 0 percent.
+
+Chi square distribution for 6299104 samples is 1452.96, and randomly
+would exceed this value less than 0.01 percent of the times.
+
+Arithmetic mean value of data bits is 0.5076 (0.5 = random).
+Monte Carlo value for Pi is 3.100761253 (error 1.30 percent).
+Serial correlation coefficient is -0.000466 (totally uncorrelated = 0.0).
+

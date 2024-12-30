@@ -1,0 +1,17 @@
+djent -b esp8266_100000.bin 
+
+ opening esp8266_100000.bin as binary
+ Symbol Size(bits) = 1
+   Min Entropy (by max occurrence of symbol 1) = 0.978254
+   Analysing 6299096 1-bit symbols
+   Shannon IID Entropy = 0.999834 bits per symbol
+   Optimal compression would compress by 0.016638 percent
+   Chi square: symbol count=6299097, distribution=1452.87, randomly exceeds 0.00 percent of the time
+   Mean = 0.507594
+   Monte Carlo value for Pi is 3.100761 (error 1.30 percent).
+   Serial Correlation = -0.000466
+   Longest Run Symbol = 1. Run Length = 24
+   Probabilty of longest run being <= 24 = 0.828841
+   Position of Longest Run = 327891 (0x500d3). Byte position 40986 (0xa01a)
+   A 2 state Markov generator with transition probabilities P01=0.507830, P10=0.492636 would generate data with the same mean and serial correlation
+
